@@ -241,6 +241,7 @@ class ChatApp extends React.Component {
                 <form class="messages-inputs" o>
                   <input
                     type="text"
+                    className="designInput"
                     placeholder="Send a message"
                     onChange={(e) => {
                       this.handleChange(e);

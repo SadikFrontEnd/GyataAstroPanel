@@ -1,4 +1,5 @@
 import * as React from "react";
+import { getastroID } from "../../pages/authentication/login/LoginJWT";
 import { ZegoUIKitPrebuilt } from "@zegocloud/zego-uikit-prebuilt";
 import "../../../assets/scss/pages/live-streaming.scss";
 function randomID(len) {
@@ -57,14 +58,16 @@ export default function App() {
   });
   // generate Kit Token
   const appID = 912338888;
-
+  const astrodetails = getastroID();
+  console.log("astrodetails", astrodetails);
   const serverSecret = "2d117c2d3654bbba1611b3631f5ba758";
   const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
     appID,
     serverSecret,
     roomID,
     randomID(5),
-    randomID(5)
+    // randomID(5),
+    astrodetails
   );
   console.log(roomID);
   // start the call

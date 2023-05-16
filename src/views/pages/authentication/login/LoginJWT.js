@@ -62,6 +62,7 @@ class LoginJWT extends React.Component {
         if (response.data.msg === "otp verified") {
           swal("Login Successfull");
           localStorage.setItem("astroId", response.data._id);
+          localStorage.setItem("astroData", JSON.stringify(response.data));
           // localStorage.setItem("user_id", response.data.data._id);
           // this.props.history.push("/");
           window.location.replace("/#/");
@@ -101,7 +102,7 @@ class LoginJWT extends React.Component {
                 <Route
                   render={({ history }) => (
                     <Button.Ripple color="primary" type="submit">
-                      Login12
+                      Login
                     </Button.Ripple>
                   )}
                 />
@@ -169,4 +170,10 @@ const mapStateToProps = (state) => {
     values: state.auth.login,
   };
 };
+
 export default connect(mapStateToProps, { loginWithJWT })(LoginJWT);
+export function getastroID() {
+  const name = JSON.parse(localStorage.getItem("astroData"));
+  const names = name.fullname;
+  return names;
+}
