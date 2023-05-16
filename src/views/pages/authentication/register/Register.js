@@ -6,7 +6,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bs-stepper/dist/css/bs-stepper.min.css";
 import astrologinbg from "../../../../assets/img/astrologin-bg.jpg";
 import { Container, Row, Col, Input, Form, Button, Label } from "reactstrap";
-import { Select } from "@mui/material";
 import Avilitiy from "../astrologerpages/Avilitiy";
 class Register extends React.Component {
   constructor() {
